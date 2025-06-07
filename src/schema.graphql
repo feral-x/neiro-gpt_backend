@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type MessageModel {
+  message: String!
+  sender: String!
+}
+
+type Mutation {
+  sendMessage(message: String!, sender: String!, user: String!): Boolean!
+}
+
+type Query {
+  getMessage: Boolean!
+}
+
+type Subscription {
+  chat(user: String!): MessageModel!
+}
