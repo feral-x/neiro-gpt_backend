@@ -2,19 +2,24 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input DeepseekMessageModel {
+  content: String!
+  role: String!
+}
+
 type MessageModel {
   message: String!
   sender: String!
 }
 
 type Mutation {
-  sendMessage(message: String!, sender: String!, user: String!): Boolean!
+  startChat(message: String!, messages: [DeepseekMessageModel!]!, userId: String!): Boolean!
 }
 
 type Query {
-  getMessage: Boolean!
+  ping: String!
 }
 
 type Subscription {
-  chat(user: String!): MessageModel!
+  chat(userId: String!): MessageModel!
 }
