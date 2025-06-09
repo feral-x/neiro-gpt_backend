@@ -9,9 +9,17 @@ export class UserModel {
 	@Field()
 	email: string;
 	@Field()
-	@HideField()
-	@Exclude()
 	password?: string;
+	@Field(() => Premium)
+	premium: Premium;
+}
+
+@ObjectType()
+export class UserLoginData {
+	@Field(() => ID)
+	id: string;
+	@Field()
+	email: string;
 	@Field(() => Premium)
 	premium: Premium;
 }

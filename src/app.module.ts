@@ -7,6 +7,7 @@ import { ChatModule } from './core/chat/chat.module';
 import { ApolloDriver } from '@nestjs/apollo';
 import { UserModule } from './core/user/user.module';
 import {Premium, Prisma} from '@prisma/client';
+import {JwtModule, JwtModuleOptions} from "@nestjs/jwt";
 
 
 registerEnumType(Premium, {

@@ -25,7 +25,10 @@ enum Premium {
 }
 
 type Query {
+  getById(id: String!): UserModel!
+  login(data: UserLoginModel!): UserLoginData!
   ping: String!
+  refreshTokens: Boolean!
 }
 
 type Subscription {
@@ -33,6 +36,17 @@ type Subscription {
 }
 
 input UserCreateModelModel {
+  email: String!
+  password: String!
+}
+
+type UserLoginData {
+  email: String!
+  id: ID!
+  premium: Premium!
+}
+
+input UserLoginModel {
   email: String!
   password: String!
 }
