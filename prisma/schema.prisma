@@ -18,5 +18,5 @@ model User {
     id       String  @id @default(uuid())
     email    String  @unique
     password String
-    premium  Premium
+    premium  Premium @default(none)
 }

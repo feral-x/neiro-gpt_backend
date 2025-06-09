@@ -13,7 +13,15 @@ type MessageModel {
 }
 
 type Mutation {
+  register(data: UserCreateModelModel!): UserModel!
   startChat(message: String!, messages: [DeepseekMessageModel!]!, userId: String!): Boolean!
+}
+
+enum Premium {
+  maximum
+  none
+  standart
+  students
 }
 
 type Query {
@@ -22,4 +30,16 @@ type Query {
 
 type Subscription {
   chat(userId: String!): MessageModel!
+}
+
+input UserCreateModelModel {
+  email: String!
+  password: String!
+}
+
+type UserModel {
+  email: String!
+  id: ID!
+  password: String!
+  premium: Premium!
 }
